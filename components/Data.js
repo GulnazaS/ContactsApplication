@@ -1,4 +1,4 @@
-import userpic from './images/userpic.png'; 
+import userpic from '../images/userpic.png'; 
 
 export const DATA = [
     {

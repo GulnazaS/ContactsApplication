@@ -31,7 +31,7 @@ const AddressBlock = ({title, description}) => {
         <View style={styles.cardStyle}>
           <View style={styles.mainBox}>
             <View style ={styles.stylePic}>
-              <Image style={styles.styleIcon} source={userpic}></Image>
+              <Image style={styles.styleIcon} source={userPic}></Image>
             </View>
             <View style={styles.titleBox}>
               <Text style ={styles.nameStyle}>{userName}</Text>
@@ -62,9 +62,18 @@ const AddressBlock = ({title, description}) => {
       flex: 3,
       alignItems: 'center',
       justifyContent: 'center',
+      width: 60,
+      height: 60,
+      borderWidth: 5,
+      borderColor: '#00ADD3',
+      borderRadius: 30,
+      marginLeft:25,
     },
     mainBox: {
       flexDirection: 'row',
+      paddingTop: 20,
+    },
+    hiddenBox:{
       paddingTop: 20,
     },
     phoneStyle: {
@@ -75,7 +84,9 @@ const AddressBlock = ({title, description}) => {
     titleBox: {
       flex: 6,
       justifyContent: 'center',
+      paddingLeft:30,
     },
+
     infoTitle: {
       fontSize: 12,
       fontWeight: '800',
@@ -89,13 +100,6 @@ const AddressBlock = ({title, description}) => {
     addresBox: {
       paddingTop: 10,
       flexDirection: 'row',
-    },
-    iconStyle: {
-      width: 60,
-      height: 60,
-      borderWidth: 5,
-      borderColor: '#00ADD3',
-      borderRadius: 30,
     },
     infoBox: {
       flex: 6,
