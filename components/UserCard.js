@@ -59,13 +59,13 @@ const AddressBlock = ({title, description}) => {
                 <Text style ={styles.phoneStyle}>{userPhone}</Text>
               </View>
             </View>
+            {isOpen && (
+              <View style={styles.hiddenBox}>
+                <AddressBlock title= 'ADDRESS' description={userAddress}/>
+                <AddressBlock title= 'EMAIL' description={userMail}/>
+              </View>
+            )}
           </View>  
-          {isOpen && (
-            <View style={styles.hiddenBox}>
-              <AddressBlock title= 'ADDRESS' description={userAddress}/>
-              <AddressBlock title= 'EMAIL' description={userMail}/>
-            </View>
-          )}
         </TouchableOpacity>
       </>
     );
