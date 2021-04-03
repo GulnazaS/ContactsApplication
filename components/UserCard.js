@@ -39,7 +39,6 @@ const AddressBlock = ({title, description}) => {
   }) => {
     
     const [isOpen, setIsOpen] = useState(false);
-    
     const handlePress = () => {
       setIsOpen (!isOpen);
       LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
@@ -63,8 +62,8 @@ const AddressBlock = ({title, description}) => {
           </View>  
           {isOpen && (
             <View style={styles.hiddenBox}>
-              <AddressBlock title= 'ADDRESS' description={userAddress}></AddressBlock>
-              <AddressBlock title= 'EMAIL' description={userMail}></AddressBlock>
+              <AddressBlock title= 'ADDRESS' description={userAddress}/>
+              <AddressBlock title= 'EMAIL' description={userMail}/>
             </View>
           )}
         </TouchableOpacity>
