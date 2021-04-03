@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
   View, 
-  Image
+  Image,
+  TouchableOpacity,
+  LayoutAnimation,
+  Platform,
+  UIManager,
   } from 'react-native';
+
+if (
+  Platform.OS === 'android' &&
+  UIManager.setLayoutAnimationEnabledExperimental
+){
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 const AddressBlock = ({title, description}) => {
     return(
@@ -25,26 +36,40 @@ const AddressBlock = ({title, description}) => {
     userPic,
     userAddress,
     userMail
-  }) =>{
+  }) => {
+    
+    const [isOpen, setIsOpen] = useState(false);
+    
+    const handlePress = () => {
+      setIsOpen (!isOpen);
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
+    };
+
     return(
       <>
-        <View style={styles.cardStyle}>
-          <View style={styles.mainBox}>
-            <View style ={styles.stylePic}>
-              <Image style={styles.styleIcon} source={userPic}></Image>
+        <TouchableOpacity
+          style={[styles.cardStyle, {height: isOpen ? 190 : 100}]}
+          onPress ={handlePress}>
+          <View style={styles.cardStyle}>
+            <View style={styles.mainBox}>
+              <View style ={styles.stylePic}>
+                <Image style={styles.styleIcon} source={userPic}></Image>
+              </View>
+              <View style={styles.titleBox}>
+                <Text style ={styles.nameStyle}>{userName}</Text>
+                <Text style ={styles.phoneStyle}>{userPhone}</Text>
+              </View>
             </View>
-            <View style={styles.titleBox}>
-              <Text style ={styles.nameStyle}>{userName}</Text>
-              <Text style ={styles.phoneStyle}>{userPhone}</Text>
+          </View>  
+          {isOpen && (
+            <View style={styles.hiddenBox}>
+              <AddressBlock title= 'ADDRESS' description={userAddress}></AddressBlock>
+              <AddressBlock title= 'EMAIL' description={userMail}></AddressBlock>
             </View>
-          </View>
-          <View style={styles.hiddenBox}>
-            <AddressBlock title= 'ADDRESS' description={userAddress}></AddressBlock>
-            <AddressBlock title= 'EMAIL' description={userMail}></AddressBlock>
-          </View>
-        </View>  
+          )}
+        </TouchableOpacity>
       </>
-    )
+    );
   };
   const styles = StyleSheet.create({
     nameStyle: {
@@ -75,6 +100,8 @@ const AddressBlock = ({title, description}) => {
     },
     hiddenBox:{
       paddingTop: 20,
+      paddingLeft:100,
+      marginLeft:15,
     },
     phoneStyle: {
       fontSize: 15,
