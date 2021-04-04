@@ -1,26 +1,41 @@
-import React from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
+import React, { useState } from 'react'
+import {StyleSheet, ScrollView, View} from 'react-native';
 import {UserCard} from './components/UserCard';
 import {DATA} from './components/Data.js';
+import {TapBar} from './components/TapBar.js';
+import {Header} from './components/Header.js';
+import {Screen2} from './screens/Screen2.js';
 
+const screenTitles = ['Contacts', 'Log In']
 
 const App = () => {
+  const [activeScreen, setActiveScreen] = useState(1)
     return (
-    <ScrollView 
-      style = {styles.scrollStyle} 
-      contentContainerStyle = {styles.scrollContainer}>
-        {DATA.map(item  => (
-          <UserCard
-            userName = {item.userName} 
-            userPhone = {item.userPhone} 
-            userPic = {item.userPic}
-            userAddress = {item.addressDescription}
-            userMail = {item.emailsDescription}
-          />
-        ))}
-    </ScrollView>
-  );
-};
+      <View style = {styles.root}>
+        <Header titlesArray = {screenTitles}
+        activeScreen = {activeScreen}
+        setActiveScreen = {setActiveScreen} />
+        {activeScreen === 1 ? (
+          <ScrollView 
+            style = {styles.scrollStyle} 
+            contentContainerStyle = {styles.scrollContainer}>
+              {DATA.map(item  => (
+                <UserCard
+                  userName = {item.userName} 
+                  userPhone = {item.userPhone} 
+                  userPic = {item.userPic}
+                  userAddress = {item.addressDescription}
+                  userMail = {item.emailDescription}
+                />
+              ))}
+          </ScrollView>
+         ) : (
+           <Screen2 /> 
+        )}
+         <TapBar setActiveScreen = {setActiveScreen} />
+      </View>
+  )
+}
 
 const styles = StyleSheet.create({
   scrollStyle:{

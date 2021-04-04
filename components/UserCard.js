@@ -49,7 +49,6 @@ const AddressBlock = ({title, description}) => {
         <TouchableOpacity
           style={[styles.cardStyle, {height: isOpen ? 190 : 100}]}
           onPress ={handlePress}>
-          <View style={styles.cardStyle}>
             <View style={styles.mainBox}>
               <View style ={styles.stylePic}>
                 <Image style={styles.styleIcon} source={userPic}></Image>
@@ -65,7 +64,6 @@ const AddressBlock = ({title, description}) => {
                 <AddressBlock title= 'EMAIL' description={userMail}/>
               </View>
             )}
-          </View>  
         </TouchableOpacity>
       </>
     );
@@ -82,25 +80,26 @@ const AddressBlock = ({title, description}) => {
       borderRadius: 10,
       marginBottom: 20,
     },
-    styleIcon: {
+    stylePic:{
       flex: 3,
       alignItems: 'center',
       justifyContent: 'center',
+      marginLeft:10,
+    },
+    styleIcon: {
       width: 60,
       height: 60,
       borderWidth: 5,
       borderColor: '#00ADD3',
       borderRadius: 30,
-      marginLeft:25,
     },
     mainBox: {
       flexDirection: 'row',
       paddingTop: 20,
     },
     hiddenBox:{
-      paddingTop: 20,
       paddingLeft:100,
-      marginLeft:15,
+      marginLeft:26,
     },
     phoneStyle: {
       fontSize: 15,
@@ -110,7 +109,6 @@ const AddressBlock = ({title, description}) => {
     titleBox: {
       flex: 6,
       justifyContent: 'center',
-      paddingLeft:30,
     },
 
     infoTitle: {
@@ -123,15 +121,12 @@ const AddressBlock = ({title, description}) => {
       fontWeight: '400',
       color: '#0A0A0A',
     },
-    addresBox: {
+    addressBox: {
       paddingTop: 10,
       flexDirection: 'row',
     },
     infoBox: {
       flex: 6,
-    },
-    spacer: {
-      flex: 3,
     },
     scrollStyle: {
       flex: 1,
