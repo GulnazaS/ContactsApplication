@@ -1,12 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {ButtonCircle} from './components/ButtonCircle.js';
+import {ButtonCircle} from './ButtonCircle.js';
 
 export const Header = ({ titleArray, activeScreen, setActiveScreen}) =>(
     <View style ={styles.root}>
-        {activeScreen === 2 &&
+        {activeScreen === 1 &&
         <ButtonCircle onPress ={setActiveScreen}/>}
-        <Text style={styles.headerText}>{titleArray[activeScreen - 1]}</Text>
+        <Text style={styles.headerText}>{titleArray[activeScreen]}</Text>
     </View>
 )
 
