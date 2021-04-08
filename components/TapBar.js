@@ -1,9 +1,9 @@
 import React  from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
 const screenStrings = ['Screen 1', 'Screen 2']
 
-export const TapBar = ({setActiveScreen}) => (
+export const TapBar = ({ setActiveScreen }) => (
     <View style ={styles.root}>
         {screenStrings.map((item, index)=>(
         <TouchableOpacity style={styles.buttonStyle} 
@@ -33,5 +33,11 @@ const styles = StyleSheet.create({
     },
     headerText:{
         fontSize: 15,
+        fontWeight: '700',
+        color: '#FFFFFF',
+        textAlign: 'center'
     },
+    buttonStyle: {
+    flex: 1
+    }
 })

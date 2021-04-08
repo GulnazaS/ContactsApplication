@@ -51,4 +51,4 @@ export const DATA = [
       userPhone: 'Phone: 010-692-6593 * 09125 ',
       userPic: userpic,
     },
-  ];
+  ]

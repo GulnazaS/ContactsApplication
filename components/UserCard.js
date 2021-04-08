@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 import {
   StyleSheet,
   Text,
@@ -8,7 +8,7 @@ import {
   LayoutAnimation,
   Platform,
   UIManager,
-  } from 'react-native';
+  } from 'react-native'
 
 if (
   Platform.OS === 'android' &&
@@ -17,7 +17,7 @@ if (
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-const AddressBlock = ({title, description}) => {
+const AddresBlock = ({ title, description }) => {
     return(
       <>
         <View style= {styles.addressBox}>
@@ -28,7 +28,7 @@ const AddressBlock = ({title, description}) => {
         </View>
       </>
     )
-  };
+  }
   
   export const UserCard = ({
     userName,
@@ -40,101 +40,99 @@ const AddressBlock = ({title, description}) => {
     
     const [isOpen, setIsOpen] = useState(false);
     const handlePress = () => {
-      setIsOpen (!isOpen);
-      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
-    };
+      setIsOpen (!isOpen)
+      LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+    }
 
-    return(
+    return (
       <>
-        <TouchableOpacity
-          style={[styles.cardStyle, {height: isOpen ? 190 : 100}]}
-          onPress ={handlePress}>
-            <View style={styles.mainBox}>
-              <View style ={styles.stylePic}>
-                <Image style={styles.styleIcon} source={userPic}></Image>
-              </View>
-              <View style={styles.titleBox}>
-                <Text style ={styles.nameStyle}>{userName}</Text>
-                <Text style ={styles.phoneStyle}>{userPhone}</Text>
-              </View>
+        <TouchableOpacity style={[styles.cardStyle, { height: isOpen ? 190 : 100 }]} onPress={handlePress}>
+          <View style={styles.mainBox}>
+            <View style={styles.styleIco}>
+              <Image style={styles.iconStyle} source={userPic} />
             </View>
-            {isOpen && (
-              <View style={styles.hiddenBox}>
-                <AddressBlock title= 'ADDRESS' description={userAddress}/>
-                <AddressBlock title= 'EMAIL' description={userMail}/>
-              </View>
-            )}
+            <View style={styles.titleBox}>
+              <Text style={styles.nameStyle}>{userName}</Text>
+              <Text style={styles.phoneStyle}>{userPhone}</Text>
+            </View>
+          </View>
+          {isOpen && (
+            <View style={styles.hiddenBox}>
+              <AddresBlock title="ADDRES" description={userAddress} />
+              <AddresBlock title="EMAIL" description={userMail} />
+            </View>
+          )}
         </TouchableOpacity>
       </>
-    );
-  };
+    )
+  }
+  
   const styles = StyleSheet.create({
     nameStyle: {
       fontSize: 21,
       fontWeight: '700',
-      color: '#00ADD3',
+      color: '#00ADD3'
     },
     cardStyle: {
       width: 363,
       backgroundColor: '#E5E5E5',
       borderRadius: 10,
-      marginBottom: 20,
+      marginBottom: 20
     },
     stylePic:{
       flex: 3,
       alignItems: 'center',
       justifyContent: 'center',
-      marginLeft:10,
+      marginLeft:10
     },
     styleIcon: {
       width: 60,
       height: 60,
       borderWidth: 5,
       borderColor: '#00ADD3',
-      borderRadius: 30,
+      borderRadius: 30
     },
     mainBox: {
       flexDirection: 'row',
-      paddingTop: 20,
+      paddingTop: 20
     },
     hiddenBox:{
       paddingLeft:100,
-      marginLeft:26,
+      marginLeft:26
     },
     phoneStyle: {
       fontSize: 15,
       fontWeight: '400',
-      color: '#00ADD3',
+      color: '#00ADD3'
     },
     titleBox: {
       flex: 6,
-      justifyContent: 'center',
+      justifyContent: 'center'
     },
-
     infoTitle: {
       fontSize: 12,
       fontWeight: '800',
-      color: '#00ADD3',
+      color: '#00ADD3'
     },
     infoContent: {
       fontSize: 12,
       fontWeight: '400',
-      color: '#0A0A0A',
+      color: '#0A0A0A'
     },
     addressBox: {
       paddingTop: 10,
-      flexDirection: 'row',
+      flexDirection: 'row'
     },
     infoBox: {
-      flex: 6,
+      flex: 6
     },
     scrollStyle: {
-      flex: 1,
+      flex: 1
     },
     scrollContainer: {
       paddingTop: 100,
       alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
+      justifyContent: 'center'
+    }
+  })
   
