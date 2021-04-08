@@ -1,19 +1,56 @@
 import React, { useState, useEffect } from 'react'
 import { StyleSheet, View, ActivityIndicator, Alert } from 'react-native'
-import { UserCard } from './components/UserCard'
-import { DATA } from './Data'
+// import  { UserCard }  from './components/UserCard.js'
+// import { DATA } from '../Data'
 import { TapBar } from './components/TapBar'
 import { Header } from './components/Header'
 import { Screen1 } from './screens/Screen1'
 import { Screen2 } from './screens/Screen2'
 
 const screenTitles = ['Contacts', 'Log In']
+const url = 'https://jsonplaceholder.typicode.com/users'
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
   const [ isLoading, setLoading ] = useState(true)
   const [ data, setData ] = useState([])
   const [ refresh, setRefresh ] =useState(false)
+
+  useEffect(()=>{
+    asyncHandler()
+  }, [refresh])
+
+  const asyncHandler = async ()=>{
+    try{
+      const response = await fetch (url)
+      const users = await response.json()
+      setData(users)
+      setLoading(false)
+      }
+      catch (error) {
+      setLoading(false)
+      alertHandler(error)
+    }
+  }
+  
+  const alertHandler = (error) =>
+    Alert.alert(
+      `${error}`,
+      'Repeat the request?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel'),
+          style: 'cancel'
+        },
+        { text: 'OK', onPress: () => setRefresh(!refresh) }
+      ],
+      { cancelable: false }
+    )
+
+  if (isLoading) {
+    return <ActivityIndicator style={styles.indicatorStyle} size="large" color="black" />
+  }
 
   return (
     <View style={styles.root}>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, ScrollView } from 'react-native'
-import { UserCard } from './components/UserCard'
+import { UserCard } from '../components/UserCard'
 
 export const Screen1 = ({ data }) => {
   return (
