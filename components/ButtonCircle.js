@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity, Image } from 'react-native'
-import arrowIcon from './images/arrowIcon'
+import arrowIcon from '../images/arrowIcon.png'
 
 export const ButtonCircle = ({ onPress }) => (
   <TouchableOpacity style={styles.buttonCircle} onPress={() => onPress(1)}>

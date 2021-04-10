@@ -20,6 +20,19 @@ const App = () => {
     asyncHandler()
   }, [refresh])
 
+  // const fetchHandler = ()=> {
+  //   fetch(url)
+  //     .then((response)=> response.json())
+  //     .then((responseJson)=> {
+  //       setData(responseJson)
+  //     })
+  //     .catch((error)=>{
+  //       alertHandler(error)
+  //     })
+  //     .finally(()=>{
+  //       setLoading(false)
+  //     })
+  // }
   const asyncHandler = async ()=>{
     try{
       const response = await fetch (url)
