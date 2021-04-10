@@ -8,7 +8,7 @@ import { Screen1 } from './screens/Screen1'
 import { Screen2 } from './screens/Screen2'
 
 const screenTitles = ['Contacts', 'Log In']
-const url = 'https://jsonplaceholder.typicode.com/users'
+const url = 'https://randomuser.me/api/?results=50'
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
@@ -20,31 +20,18 @@ const App = () => {
     asyncHandler()
   }, [refresh])
 
-  // const fetchHandler = ()=> {
-  //   fetch(url)
-  //     .then((response)=> response.json())
-  //     .then((responseJson)=> {
-  //       setData(responseJson)
-  //     })
-  //     .catch((error)=>{
-  //       alertHandler(error)
-  //     })
-  //     .finally(()=>{
-  //       setLoading(false)
-  //     })
-  // }
-  const asyncHandler = async ()=>{
-    try{
-      const response = await fetch (url)
+  const asyncHandler = async () => {
+    try {
+      const response = await fetch(url)
       const users = await response.json()
       setData(users)
       setLoading(false)
-      }
-      catch (error) {
+    } catch (error) {
       setLoading(false)
       alertHandler(error)
     }
   }
+
   
   const alertHandler = (error) =>
     Alert.alert(

@@ -7,13 +7,13 @@ export const Screen1 = ({ data }) => {
     <ScrollView 
       style = {styles.scrollStyle} 
       contentContainerStyle = {styles.scrollContainer}>
-      {data.map(item  => (
+      {data.map((item) => (
         <UserCard
-          userName = {item.userName} 
-          userPhone = {item.userPhone} 
-          userPic = {item.userPic}
-          userAddress = {item.addressDescription}
-          userMail = {item.emailDescription}
+          userName={item.name}
+          userPhone={item.phone}
+          userPic={item.userPic}
+          userAddress={item.address.city}
+          userMail={item.email}
         />
       ))}
     </ScrollView>

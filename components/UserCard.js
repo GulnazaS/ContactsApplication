@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   LayoutAnimation,
   Platform,
-  UIManager,
+  UIManager
   } from 'react-native'
 
 if (
@@ -38,7 +38,7 @@ const AddresBlock = ({ title, description }) => {
     userMail
   }) => {
     
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false)
     const handlePress = () => {
       setIsOpen (!isOpen)
       LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
