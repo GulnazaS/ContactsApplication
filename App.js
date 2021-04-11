@@ -6,8 +6,9 @@ import { TapBar } from './components/TapBar'
 import { Header } from './components/Header'
 import { Screen1 } from './screens/Screen1'
 import { Screen2 } from './screens/Screen2'
+import { Screen3 } from './screens/Screen3'
 
-const screenTitles = ['Contacts', 'Log In']
+const screenTitles = ['Contacts', 'Log In', 'Gallery']
 const url = 'https://randomuser.me/api/?results=50'
 
 const App = () => {
@@ -55,7 +56,7 @@ const App = () => {
   return (
     <View style={styles.root}>
       <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
-      {activeScreen === 1 ? <Screen1 data={data} /> : <Screen2 />}
+      {activeScreen === 1 ? <Screen1 data={data} /> : activeScreen === 2? <Screen2 />: <Screen3 />}
       <TapBar setActiveScreen={setActiveScreen} />
     </View>
   )

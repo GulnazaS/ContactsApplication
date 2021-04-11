@@ -48,8 +48,8 @@ const AddresBlock = ({ title, description }) => {
       <>
         <TouchableOpacity style={[styles.cardStyle, { height: isOpen ? 190 : 100 }]} onPress={handlePress}>
           <View style={styles.mainBox}>
-            <View style={styles.styleIco}>
-              <Image style={styles.iconStyle} source={userPic} />
+            <View style={styles.iconStyle}>
+              <Image style={styles.stylePic} source={{uri:userPic}} />
             </View>
             <View style={styles.titleBox}>
               <Text style={styles.nameStyle}>{userName}</Text>
@@ -79,26 +79,26 @@ const AddresBlock = ({ title, description }) => {
       borderRadius: 10,
       marginBottom: 20
     },
-    stylePic:{
+    iconStyle:{
       flex: 3,
       alignItems: 'center',
       justifyContent: 'center',
-      marginLeft:10
     },
-    styleIcon: {
+    stylePic: {
       width: 60,
       height: 60,
       borderWidth: 5,
       borderColor: '#00ADD3',
-      borderRadius: 30
+      borderRadius: 30,
+      marginLeft:30
     },
     mainBox: {
       flexDirection: 'row',
       paddingTop: 20
     },
     hiddenBox:{
-      paddingLeft:100,
-      marginLeft:26
+      // paddingLeft:100,
+      // marginLeft:26
     },
     phoneStyle: {
       fontSize: 15,
@@ -107,7 +107,8 @@ const AddresBlock = ({ title, description }) => {
     },
     titleBox: {
       flex: 6,
-      justifyContent: 'center'
+      justifyContent: 'center',
+      paddingLeft:35
     },
     infoTitle: {
       fontSize: 12,

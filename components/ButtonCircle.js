@@ -13,7 +13,7 @@ export const ButtonCircle = ({ onPress }) => (
     buttonCircle: {
       width: 40,
       height: 40,
-      backgroundColor: '#0A0A0A',
+      backgroundColor: '#00ADD3',
       borderRadius: 20,
       marginRight: 15,
       alignItems: 'center',
