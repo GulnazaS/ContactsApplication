@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   root: {
-    paddingHorizontal: 25,
+    // paddingHorizontal: 25,
     flex: 1
   },
   inputStyle: {

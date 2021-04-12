@@ -1,3 +1,4 @@
+import template from 'babel-template'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ButtonCircle } from './ButtonCircle'
@@ -18,7 +19,8 @@ export const Header = ({ titlesArray, activeScreen, setActiveScreen }) => (
     headerText: {
       fontSize: 36,
       fontWeight: '100',
-      color: '#0A0A0A'
+      color: '#0A0A0A',
+      marginHorizontal: 25
     },
     buttonCircle: {
       width: 40,
