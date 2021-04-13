@@ -3,16 +3,17 @@ import { StyleSheet, ScrollView } from 'react-native'
 import { UserCard } from '../components/UserCard'
 
 export const Screen1 = ({ data }) => {
+  console.log(data[0])
   return (
     <ScrollView 
-      style = {styles.scrollStyle} 
-      contentContainerStyle = {styles.scrollContainer}>
+      style={styles.scrollStyle} 
+      contentContainerStyle={styles.scrollContainer}>
       {data.results.map((item) => (
         <UserCard
-          userName={item.name.first}
+          userName={`${item.name.title}. ${item.name.last} ${item.name.first}`} 
           userPhone={item.phone}
-          userPic={item.picture.large}
-          userAddress={item.location.city}
+          userPic={{ uri: item.picture.large }}
+          userAddress={`${item.location.country}, ${item.location.state}, ${item.location.city}`}
           userMail={item.email}
         />
       ))}
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   scrollContainer:{
     paddingTop: 40,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   }
 })
 

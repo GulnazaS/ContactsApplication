@@ -1,9 +1,18 @@
 import React, { useState } from 'react'
-import { StyleSheet, ScrollView, TextInput } from 'react-native'
+import { StyleSheet, ScrollView, TextInput, View, Text, TouchableOpacity, Button } from 'react-native'
+import  Screen3  from './Screen3'
 
 export const Screen2 = () => {
   const [valueLogin, setValueLogin] = useState('')
   const [valuePassword, setValuePassword] = useState('')
+  // const Knopka = ({ setActiveScreen }) => (
+    // <TouchableOpacity style={styles.knopka} 
+    // onPress ={() => setActiveScreen (Screen3)}>
+    //   <Text style={styles.knopkaText}>SUBMIT</Text> 
+    // </TouchableOpacity>    
+   
+
+
   return (
     <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
       <TextInput
@@ -18,6 +27,9 @@ export const Screen2 = () => {
         value={valuePassword}
         onChangeText={setValuePassword}
       />
+      {/* <TouchableOpacity style={styles.knopka} onPress ={() => setActiveScreen(2)}>
+        <Text style={styles.knopkaText}>SUBMIT</Text> 
+      </TouchableOpacity> */}
     </ScrollView>
   )
 }
@@ -38,6 +50,22 @@ const styles = StyleSheet.create({
     paddingLeft: 30,
     borderRadius: 20,
     fontSize: 18
+  },
+  knopka:{
+    backgroundColor:'#00ADD3',
+    flexDirection:'column',
+    justifyContent:'flex-end',
+    width:265,
+    height:51,
+    borderRadius:40,
+    marginTop: 80
+  },
+  knopkaText:{
+    textAlign:'center',
+    justifyContent:'center',
+    color:'white',
+    fontWeight:'400',
+    marginBottom:15
   }
 })
 

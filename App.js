@@ -56,7 +56,7 @@ const App = () => {
   return (
     <View style={styles.root}>
       <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
-      {activeScreen === 1 ? <Screen1 data={data} /> : activeScreen === 2? <Screen2 />: <Screen3 />}
+      {activeScreen === 1 ? <Screen1 data={data} /> : activeScreen === 2 ? <Screen2 /> : <Screen3 /> }
       <TapBar setActiveScreen={setActiveScreen} />
     </View>
   )

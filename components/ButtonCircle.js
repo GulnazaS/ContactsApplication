@@ -17,7 +17,8 @@ export const ButtonCircle = ({ onPress }) => (
       borderRadius: 20,
       marginRight: 15,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      marginLeft:30
     },
     iconStyle: {
       height: 20,

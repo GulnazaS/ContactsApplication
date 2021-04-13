@@ -1,19 +1,56 @@
-import React from 'react'
-import { StyleSheet, FlatList, Image, View, Text, TouchableOpacity } from 'react-native'
-import picture from '../images/Rectangle5.png'
+import React, {useRef, useState} from 'react'
+import { StyleSheet, Image, SafeAreaView , View, Text, TouchableOpacity, ScrollView, FlatList } from 'react-native'
+// import {picture} from '../images/Rectangle5.png'
 
 // const url ='https://jsonplaceholder.typicode.com/photos?_limit=30'
 
-export const Screen3 = () => {
+    export const Screen3 = () => {
     return(
-        <View style= {styles.flatStyle} contentContainerStyle={styles.flatContainer}>
-            <View style={styles.boxPic}>
-                <Image source= {picture}/>
-                <Text style={styles.picText}> Official photo for album</Text>
-                <Text style={styles.picText}> ALBUM </Text>
-            </View>
-            
-        </View>     
+        <FlatList style= {styles.flatStyle} contentContainerStyle={styles.flatContainer}>
+            {/* <TouchableOpacity>
+                <View style={styles.boxPic}>
+                    <Image source= {picture}/>
+                    <Text style={styles.picText}> Official photo for album</Text>
+                    <Text style={styles.picText}> ALBUM </Text>
+                </View> 
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={styles.boxPic}>
+                    <Image source= {picture}/>
+                    <Text style={styles.picText}> Official photo for album</Text>
+                    <Text style={styles.picText}> ALBUM </Text>
+                </View> 
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={styles.boxPic}>
+                    <Image source= {picture}/>
+                    <Text style={styles.picText}> Official photo for album</Text>
+                    <Text style={styles.picText}> ALBUM </Text>
+                </View> 
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={styles.boxPic}>
+                    <Image source= {picture}/>
+                    <Text style={styles.picText}> Official photo for album</Text>
+                    <Text style={styles.picText}> ALBUM </Text>
+                </View> 
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={styles.boxPic}>
+                    <Image source= {picture}/>
+                    <Text style={styles.picText}> Official photo for album</Text>
+                    <Text style={styles.picText}> ALBUM </Text>
+                </View> 
+            </TouchableOpacity>
+            <TouchableOpacity>
+                <View style={styles.boxPic}>
+                    <Image source= {picture}/>
+                    <Text style={styles.picText}> Official photo for album</Text>
+                    <Text style={styles.picText}> ALBUM </Text>
+                </View> 
+            </TouchableOpacity>   */}
+
+        </FlatList>    
     )
 }
 
@@ -35,6 +72,8 @@ const styles = StyleSheet.create({
     },
     boxPic:{
         borderColor:'white',
-        borderWidth: 1
+        borderWidth: 1,
+        marginBottom:30,
+        borderRadius:10
     }
 })

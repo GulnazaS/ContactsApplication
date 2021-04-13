@@ -61,7 +61,7 @@ const AddresBlock = ({ title, description }) => {
               <AddresBlock title="ADDRES" description={userAddress} />
               <AddresBlock title="EMAIL" description={userMail} />
             </View>
-          )}
+          )} 
         </TouchableOpacity>
       </>
     )
@@ -71,7 +71,8 @@ const AddresBlock = ({ title, description }) => {
     nameStyle: {
       fontSize: 21,
       fontWeight: '700',
-      color: '#00ADD3'
+      color: '#00ADD3',
+      textAlign:'left'
     },
     cardStyle: {
       width: 363,
@@ -89,26 +90,29 @@ const AddresBlock = ({ title, description }) => {
       height: 60,
       borderWidth: 5,
       borderColor: '#00ADD3',
-      borderRadius: 30,
-      marginLeft:30
+      borderRadius: 30
     },
     mainBox: {
       flexDirection: 'row',
       paddingTop: 20
     },
     hiddenBox:{
-      // paddingLeft:100,
-      // marginLeft:26
+      textAlign:'right',
+      justifyContent:'center',
+      flex:6,
+      paddingLeft:62,
+      marginLeft:60
+
     },
     phoneStyle: {
       fontSize: 15,
       fontWeight: '400',
-      color: '#00ADD3'
+      color: '#00ADD3',
+      textAlign:'left'
     },
     titleBox: {
       flex: 6,
-      justifyContent: 'center',
-      paddingLeft:35
+      justifyContent: 'center'
     },
     infoTitle: {
       fontSize: 12,
