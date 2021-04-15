@@ -1,17 +1,12 @@
 import React, { useState } from 'react'
-import { StyleSheet, ScrollView, TextInput, View, Text, TouchableOpacity, Button } from 'react-native'
-// import  Screen3  from './Screen3'
-import Knopka from '../components/Button'
+import { StyleSheet, ScrollView, TextInput } from 'react-native'
+// import  { Screen3 }  from './Screen3'
+import { Knopka } from '../components/Button'
 // import { Header } from '../components/Header'
 
   export const Screen2 = () => {
   const [valueLogin, setValueLogin] = useState('')
   const [valuePassword, setValuePassword] = useState('')
-  // const Knopka = ({ setActiveScreen }) => (
-  //   <TouchableOpacity style={styles.knopka} 
-  //   onPress ={() => setActiveScreen (Screen3)}>
-  //     <Text style={styles.knopkaText}>SUBMIT</Text> 
-  //   </TouchableOpacity>)  
    
   return (
     // <Header title ="Log In" />
@@ -28,10 +23,6 @@ import Knopka from '../components/Button'
         value={valuePassword}
         onChangeText={setValuePassword}
       />
-       {/* <TouchableOpacity style={styles.knopka} 
-        onPress ={() => setActiveScreen (Screen3)}>
-          <Text style={styles.knopkaText}>SUBMIT</Text> 
-      </TouchableOpacity> */}
       <Knopka />
     </ScrollView>
   )
