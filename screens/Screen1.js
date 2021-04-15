@@ -3,7 +3,8 @@ import { StyleSheet, ScrollView } from 'react-native'
 import { UserCard } from '../components/UserCard'
 
 export const Screen1 = ({ data }) => {
-  console.log(data[0])
+  // console.log(data)
+
   return (
     <ScrollView 
       style={styles.scrollStyle} 

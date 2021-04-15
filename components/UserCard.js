@@ -49,7 +49,7 @@ const AddresBlock = ({ title, description }) => {
         <TouchableOpacity style={[styles.cardStyle, { height: isOpen ? 190 : 100 }]} onPress={handlePress}>
           <View style={styles.mainBox}>
             <View style={styles.iconStyle}>
-              <Image style={styles.stylePic} source={{uri:userPic}} />
+              <Image style={styles.stylePic} source={userPic} />
             </View>
             <View style={styles.titleBox}>
               <Text style={styles.nameStyle}>{userName}</Text>

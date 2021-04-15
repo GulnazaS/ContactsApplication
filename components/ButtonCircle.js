@@ -8,7 +8,6 @@ export const ButtonCircle = ({ onPress }) => (
   </TouchableOpacity>
 )
 
-  
   const styles = StyleSheet.create({
     buttonCircle: {
       width: 40,
